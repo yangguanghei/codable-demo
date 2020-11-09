@@ -15,6 +15,7 @@
 		1844C9082555654800C69991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1844C9062555654800C69991 /* LaunchScreen.storyboard */; };
 		1844C9132555654900C69991 /* codable__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844C9122555654900C69991 /* codable__Tests.swift */; };
 		1844C91E2555654900C69991 /* codable__UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844C91D2555654900C69991 /* codable__UITests.swift */; };
+		1844C92F2555655F00C69991 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844C92E2555655F00C69991 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1844C9192555654900C69991 /* codable使用UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "codable使用UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1844C91D2555654900C69991 /* codable__UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codable__UITests.swift; sourceTree = "<group>"; };
 		1844C91F2555654900C69991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1844C92E2555655F00C69991 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,9 @@
 				1844C91C2555654900C69991 /* codable使用UITests */,
 				1844C8F92555654600C69991 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		1844C8F92555654600C69991 /* Products */ = {
 			isa = PBXGroup;
@@ -102,6 +106,7 @@
 				1844C8FB2555654600C69991 /* AppDelegate.swift */,
 				1844C8FD2555654600C69991 /* SceneDelegate.swift */,
 				1844C8FF2555654600C69991 /* ViewController.swift */,
+				1844C92E2555655F00C69991 /* Person.swift */,
 				1844C9012555654600C69991 /* Main.storyboard */,
 				1844C9042555654800C69991 /* Assets.xcassets */,
 				1844C9062555654800C69991 /* LaunchScreen.storyboard */,
@@ -260,6 +265,7 @@
 			files = (
 				1844C9002555654600C69991 /* ViewController.swift in Sources */,
 				1844C8FC2555654600C69991 /* AppDelegate.swift in Sources */,
+				1844C92F2555655F00C69991 /* Person.swift in Sources */,
 				1844C8FE2555654600C69991 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,15 +442,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = "codable使用/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "LS.codable--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = mum_dev_all;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,15 +464,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = "codable使用/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "LS.codable--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = mum_dev_all;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
