@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -18,11 +17,10 @@ class ViewController: UIViewController {
 		let parameter: NSDictionary = ["name": "爸爸"]
 //		let d = convertDictionaryToJSONString(dict: parameter)
 		
-		let p: NSDictionary = ["menu": ["id": "nil", "value": "File", "popup": ["menuitem": [
-		
-			["value": "nil", "onclick": "C"],
-			["value": "Open", "onclick": "O"],
-			["value": "Close", "onclick": "P"]
+		let p: NSDictionary = ["menu": ["id": "d", "value": "File", "popup": ["menuitem": [
+			["value": "1", "onclick": "C"],
+			["value": "2", "onclick": "P"],
+			["value": "3", "onclick": "J", "some": "s"]
 		
 		]]]]
 		
@@ -31,25 +29,42 @@ class ViewController: UIViewController {
 		let data = d.data(using: .utf8)!
 		do {
 			let obj = try JSONDecoder().decode(Obj.self, from: data)
-			
-//			let name = obj.name
-			
 			let value = obj.menu.popup.menuItem[1].value
-			print("😊😊😊😊😊")
 			print(value)
-			
 			let id = obj.menu.id
 			print(id)
-			
 		} catch {
 			print("出错了\(error)")
 		}
 		
 	}
-
-
 }
 
+struct Obj: Codable {
+	let menu: Menu
+	
+	struct Menu: Codable {
+		let id: String
+		let value: String
+		let popup: Popup
+	}
+	
+	struct Popup: Codable {
+		let menuItem: [MenuItem]
+		enum CodingKeys: String, CodingKey {
+			case menuItem = "menuitem"
+		}
+	}
+	
+	struct MenuItem: Codable {
+		let value: String
+		let onClick: String?	// 如果不是可选类型且后台没有返回，decode不成功
+		enum CodingKeys: String, CodingKey {
+			case value
+			case onClick = "onclick"
+		}
+	}
+}
 
 extension ViewController {
 	
